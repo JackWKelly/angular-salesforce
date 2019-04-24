@@ -1,0 +1,23 @@
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  
+  #input {
+    margin-right:0%;
+    margin-left: auto;
+  }
+  
+  #loginname {
+    display: block;
+    margin-left: center;
+    margin-right: center;
+    text-align: center;
+  }
+  
+  
+  
+  

@@ -1,21 +1,19 @@
+<mat-toolbar>
+  <span>FAQ</span>
+  <input id="input" [(ngModel)]="name" matInput>
+  <button mat-button (click)="onLoginClick()">Login</button>
+</mat-toolbar>
 
-<p>Login:</p>
-<form id="nameForm" (ngSubmit)="onSubmit()">
 
-    <label>
-      Name:
-      <input type="text" [formControl]="name">
-  
-    </label>
+<img @fade id="wlc" src="./assets/img/wlc.png" class="center">
 
-  <button type="submit">Submit</button>
-
-</form>
-
+<div id="loginname"  >
+  <p><i><font size="+16">{{ name }}</font></i></p>
+</div>
 
 <mat-accordion>
     <mat-expansion-panel *ngFor="let post of posts">
-      <mat-expansion-panel-header>
+      <mat-expansion-panel-header @rotate>
         {{ post.name }}
       </mat-expansion-panel-header>
       {{ post.content }}

@@ -3,20 +3,38 @@ import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { SfdataService } from '../../../sfdata.service';
 import { Record, Data, Faq } from '../../../models';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-post-list',
-  templateUrl: './post-list.component.html'
+  templateUrl: './post-list.component.html',
+  styleUrls: ['./post-list.component.css'],
+  animations: [
+    trigger('fade', [
+      transition('void => *', [
+        style({ opacity: 0 }),
+        animate(1200)
+      ])
+    ]),
+    trigger('rotate', [
+      transition('void => *', [
+        style({
+          transform: 'rotateY(90deg)'
+        }),
+        animate(500)
+      ])
+    ])
+  ]
 })
+
 export class PostListComponent {
 
   constructor(private sfDataService: SfdataService) { }
-
-  name = new FormControl('');
   posts: Faq[];
+  name: string;
 
-  onSubmit() {
-    let customerName: string = this.name.value;
+  onLoginClick() {
+    let customerName: string = this.name;
     console.log(customerName);
     this.sfDataService.getFaqs(customerName)
       .subscribe(sfData => {
