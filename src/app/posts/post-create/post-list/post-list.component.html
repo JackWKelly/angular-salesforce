@@ -1,7 +1,22 @@
+
+<p>Login:</p>
+<form id="nameForm" (ngSubmit)="onSubmit()">
+
+    <label>
+      Name:
+      <input type="text" [formControl]="name">
+  
+    </label>
+
+  <button type="submit">Submit</button>
+
+</form>
+
+
 <mat-accordion>
     <mat-expansion-panel *ngFor="let post of posts">
       <mat-expansion-panel-header>
-        {{ post.title }}
+        {{ post.name }}
       </mat-expansion-panel-header>
       {{ post.content }}
     </mat-expansion-panel>

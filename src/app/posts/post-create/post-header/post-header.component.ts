@@ -1,7 +1,14 @@
 import { Component } from '@angular/core';
 
-@Component ({
+
+@Component({
   selector: 'app-header-list',
   templateUrl: './post-header.component.html'
 })
-export class PostHeaderComponent {}
+export class PostHeaderComponent {
+
+  constructor() { }
+
+
+
+}
